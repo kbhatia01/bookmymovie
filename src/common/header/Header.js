@@ -1,6 +1,7 @@
 import React from "react";
 import './Header.css';
 import Logo from '../../assets/logo.svg';
+import Button from '@material-ui/core/Button';
 
 export default function Header(){
     return(
@@ -8,6 +9,11 @@ export default function Header(){
         <div className="logo">
             <img src={Logo}  alt="logo"/>
         </div>
-
+        <div className="action">
+            <Button variant="contained" color="primary">
+                Book Movie now
+            </Button>
+            <Button variant="contained">sign in</Button>
+        </div>
     </div>);
 }

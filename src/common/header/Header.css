@@ -29,3 +29,7 @@
 .header .action button{
     margin-left: 12px;
 }
+
+.header .action a{
+    text-decoration: none;
+}

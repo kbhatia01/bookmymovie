@@ -5,6 +5,8 @@ import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import { Link } from "react-router-dom";
+import Filter from "./Filter";
+
 
 function CurrentMovies(props) {
   //use State for managging filter
@@ -36,7 +38,7 @@ function CurrentMovies(props) {
             </ImageList>
           </Grid>
           <Grid item xs={3}>
-            
+            <Filter movieList={movieList}/>
           </Grid>
         </Grid>
       </div>

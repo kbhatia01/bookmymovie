@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 function UpcomingMovies(props) {
   // use state for ucoming movies... each grid will carry single movie
- console.log(props.movies);
 
 const classes = useStyles();
   return (

@@ -8,6 +8,8 @@ import Tab from "@material-ui/core/Tab";
 import Login from "./Login";
 import Register from "./Register"
 import "./login.css";
+import Register from "./Register";
+import { Link } from "react-router-dom";
 
 /* tab changes */
 function TabPanel(props) {
@@ -59,7 +61,7 @@ function getModalStyle() {
   };
 }
 
-const ModalContainer = () => {
+const ModalContainer = (props) => {
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
@@ -101,6 +103,12 @@ const ModalContainer = () => {
 
   return (
     <div>
+      {props.bookShow? <Link to={"/bookshow/"+props.bookShow}>
+            <Button variant="contained" color="primary">
+                Book Show
+            </Button>
+            </Link>:""
+          }  
       <Button variant="contained" onClick={handleOpen}>
         Login
       </Button>

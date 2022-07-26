@@ -3,15 +3,21 @@ import './Header.css';
 import Logo from '../../assets/logo.svg';
 import Button from '@material-ui/core/Button';
 import ModalContainer from "../login/ModalContainer"
+import { Link } from "react-router-dom";
 
-export default function Header(){
+export default function Header(props){
     return(
     <div className="header">
+         <Link to="/">
+            <div className="logo">
+                <img src={Logo}  alt="logo"/>
+            </div>
+        </Link>
         <div className="logo">
             <img src={Logo}  alt="logo"/>
         </div>
         <div className="action">
-            <ModalContainer />
+            <ModalContainer {...props} />
             <Button variant="contained">sign in</Button>
         </div>
     </div>);

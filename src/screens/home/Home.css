@@ -20,3 +20,18 @@
     width: 120%;
 }
 
+.currentContainer{
+  margin-top: 30px;
+  padding: 0 20px;
+}
+.upComingContainer{
+  overflow: hidden;
+}
+
+.MuiImageListItem-item a{
+  display: block;
+  height: 100%;
+}
+.MuiImageListItem-item img{
+  width: 100%;;
+}

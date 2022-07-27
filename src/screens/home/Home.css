@@ -10,7 +10,13 @@
   font-size: 2rem;
   font-weight: bold;
   color: #000;
-  text-align: center;
+    text-align: center;
+}
+.promoBar{
+    background: #ff7f7f;
+    color:#222;
+    padding: 8px 0;
+    text-align: center;
 }
 
 .upcomingMovieList{
@@ -21,24 +27,24 @@
 }
 
 .currentContainer{
-  margin-top: 30px;
-  padding: 0 20px;
+    margin-top: 30px;
+    padding: 0 20px;
 }
 .upComingContainer{
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .MuiImageListItem-item a{
-  display: block;
-  height: 100%;
+    display: block;
+    height: 100%;
 }
 .MuiImageListItem-item img{
-  width: 100%;;
+    width: 100%;;
 }
 
 .theme-primary-color{
-  color:#4791db;
+    color:#4791db;
 }
 .text-uppercase{
-  text-transform: uppercase;
+    text-transform: uppercase;
 }

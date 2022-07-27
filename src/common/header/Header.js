@@ -8,17 +8,13 @@ import { Link } from "react-router-dom";
 export default function Header(props){
     return(
     <div className="header">
-         <Link to="/">
+        <Link to="/">
             <div className="logo">
                 <img src={Logo}  alt="logo"/>
             </div>
         </Link>
-        <div className="logo">
-            <img src={Logo}  alt="logo"/>
-        </div>
-        <div className="action">
+        <div className="action">   
             <ModalContainer {...props} />
-            <Button variant="contained">sign in</Button>
         </div>
     </div>);
 }

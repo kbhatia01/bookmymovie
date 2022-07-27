@@ -1,7 +1,6 @@
 import React from "react";
 import './Header.css';
 import Logo from '../../assets/logo.svg';
-import Button from '@material-ui/core/Button';
 import ModalContainer from "../login/ModalContainer"
 import { Link } from "react-router-dom";
 
@@ -13,7 +12,7 @@ export default function Header(props){
                 <img src={Logo}  alt="logo"/>
             </div>
         </Link>
-        <div className="action">   
+        <div className="action">
             <ModalContainer {...props} />
         </div>
     </div>);

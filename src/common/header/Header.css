@@ -9,6 +9,7 @@
     text-indent: -9999px;
     background: #ff7f7f;
     animation: logoanimation 8s infinite linear;
+    float: left;
 }
 .logo img{
     display: block;

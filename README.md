@@ -1,3 +1,15 @@
+Working Screenshots:
+
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.01.46%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.02.18%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.02.30%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.02.36%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.06.51%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.07.01%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.07.22%20PM.png)
+![Alt text](/working_screenshots/Screenshot%202022-07-27%20at%206.07.48%20PM.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

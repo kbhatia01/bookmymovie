@@ -4,19 +4,19 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import YouTube from "react-youtube";
-import "./Details.css";
 import Rating from "@material-ui/lab/Rating";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
+import "./Details.css";
 
-export default function Details() {
+export default function Details(props) {
   const [movieDetails, setMoviedetails] = useState([]);
   const [starView, setStarValue] = React.useState(0);
 
   function loadData() {
     fetch(
-      "http://localhost:8086/api/v1/movies/" +
+      props.baseUrl+"movies/" +
         window.location.pathname.replace(/.*\//, "")
     )
       .then((input) => input.json())
@@ -24,7 +24,6 @@ export default function Details() {
   }
   useEffect(() => {
     loadData();
-
   }, []);
   const opts = {
     height: "300",
@@ -36,9 +35,8 @@ export default function Details() {
   const youtubeOnReady = (event) => {
     event.target.pauseVideo();
   };
-
   const detailsPageContent =  <Grid container spacing={2}>
-
+         
   {/* left part starts here */}
   <Grid item xs={2}>
     <img src={movieDetails.poster_url} alt={movieDetails.title} />
@@ -127,12 +125,13 @@ export default function Details() {
 
   return (
     <div className="detailsPage">
-      <Header bookShow={movieDetails.id?movieDetails.id:null}/>
+      <Header {...props} bookShow={movieDetails.id?movieDetails.id:null}/>
       <Typography component="div" className="page-container">
         <div className="breadCrumb">
           <Link to="/">{`< Back to Home`}</Link>
         </div>
         {(movieDetails.id)?detailsPageContent:<h2>No Movie Found, Please proceed to Home Page </h2>}
+        
       </Typography>
     </div>
   );

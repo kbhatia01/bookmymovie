@@ -6,10 +6,9 @@ import PropTypes from "prop-types";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Login from "./Login";
-import Register from "./Register"
-import "./login.css";
 import Register from "./Register";
 import { Link } from "react-router-dom";
+import "./login.css";
 
 /* tab changes */
 function TabPanel(props) {
@@ -65,6 +64,8 @@ const ModalContainer = (props) => {
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
+  const [isLogin, setIslogin] = React.useState(false);
+
 
   //const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -80,6 +81,11 @@ const ModalContainer = (props) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const handleisLogin = (e) => {
+    if(e.clicked){
+      setIslogin(!isLogin);
+    }
+  };
 
   const body = (
     <div style={modalStyle} className="modalContainer">
@@ -93,10 +99,10 @@ const ModalContainer = (props) => {
       </Tabs>
 
       <TabPanel value={value} index={0}>
-        <Login />
+        <Login {...props} loginHandle={handleisLogin} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Register />
+        <Register {...props} />
       </TabPanel>
     </div>
   );
@@ -109,8 +115,8 @@ const ModalContainer = (props) => {
             </Button>
             </Link>:""
           }  
-      <Button variant="contained" onClick={handleOpen}>
-        Login
+      <Button variant="contained" onClick={(!isLogin)?handleOpen:()=>handleisLogin({"clicked":true})}>
+        {(!isLogin)?"Login":"logout"}
       </Button>
       <Modal
         open={open}

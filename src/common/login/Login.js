@@ -1,15 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import Button from "@material-ui/core/Button";
 
-function Login() {
+function Login(props) {
   const onFormSubmitted = (e) => {
     e.preventDefault();
-
-    // addSubscriberHandler(addSubscriberForm);
-    //     setAddSubscriberForm({ id: 0, name: '', phone: ' ' });
-    // history.push("/")
+    props.loginHandle({"clicked":true});
+    
   };
+  const [username, setUsername] = useState("");
+  const [password, setPass] = useState("");
+  
+   
   return (
     <ValidatorForm className="login-form" onSubmit={onFormSubmitted}>
       <br />
@@ -18,8 +20,10 @@ function Login() {
         label="Username *"
         type="text"
         name="username"
-        // onChange={inputChangedHandler}
-        //value={}
+        value={username}
+        onChange={(e) => {
+          setUsername(e.target.value);
+        }}
         validators={["required"]}
         errorMessages={["required"]}
       ></TextValidator>
@@ -28,9 +32,11 @@ function Login() {
         id="password"
         type="password"
         name="password"
-        //  onChange={inputChangedHandler}
+        onChange={(e) => {
+          setPass(e.target.value);
+        }}
         label="Password *"
-        // value={"phone"}
+        value={password}
         validators={["required"]}
         errorMessages={["required"]}
       ></TextValidator>
